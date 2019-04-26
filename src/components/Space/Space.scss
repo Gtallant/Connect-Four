@@ -1,0 +1,14 @@
+.space {
+  flex-grow: 1;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    background: #fff;
+  }
+}
