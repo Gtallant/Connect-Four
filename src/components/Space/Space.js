@@ -1,10 +1,10 @@
 import React from 'react';
 import './Space.scss';
 
-function Space() {
+function Space(props) {
   return (
     <div className="space">
-      <div className="space__icon" />
+      <div className ={`space__icon ${props.value ? props.value : ''}`} />
     </div>
   );
 }

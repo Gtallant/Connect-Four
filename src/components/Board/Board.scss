@@ -4,18 +4,10 @@
   max-width: 600px;
   height: 50vw;
   max-height: calc(80vh - 80px);
-  margin: 5vw auto 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   align-items: stretch;
   justify-content: stretch;
   padding: 8px;
-
-
-  &__col {
-    display: flex;
-    flex-direction: column;
-    flex-basis: auto;
-    flex: 1;
-  }
 }

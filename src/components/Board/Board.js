@@ -1,66 +1,28 @@
 import React from 'react';
 import './Board.scss';
-import Space from '../Space';
+import Column from '../Column';
 
-function Board() {
+function Board(props) {
+  const {
+    currentPlayer,
+    playerColors,
+    gameData,
+    placeToken,
+    endTurn,
+  } = props;
   return (
     <div className="board">
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
-      <div className="board__col">
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-        <Space />
-      </div>
+      {gameData.map((col, i) => (
+        <Column 
+          key={i}
+          index={i}
+          currentPlayer={currentPlayer} 
+          playerColors={playerColors} 
+          columnData={col}
+          placeToken={placeToken}
+          endTurn={endTurn}
+        />
+      ))}
     </div>
   );
 }

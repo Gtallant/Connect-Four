@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Board from '../Board';
+import Game from '../Game';
 import StartScreen from '../StartScreen';
 
 class App extends React.Component {
@@ -21,11 +21,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { screen } = this.state;
+    const { screen, playerOneColor } = this.state;
     return (
       <div className="App">
         {screen === "START" ? <StartScreen start={this.startGame} /> : ''}
-        {screen === "GAME" ? <Board /> : ''}
+        {screen === "GAME" ? <Game playerOneColor={playerOneColor} /> : ''}
       </div>
     );
   }
