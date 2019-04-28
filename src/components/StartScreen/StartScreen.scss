@@ -1,0 +1,47 @@
+.start {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    &__image {
+      max-width: 400px;
+    }
+  }
+
+  &__directions {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__pick-color {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+
+    &__btn {
+      height: 100px;
+      width: 100px;
+      border-radius: 100%;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &.red {
+        background: red;
+      }
+
+      &.black {
+        background: black;
+      }
+    }
+  }
+}
