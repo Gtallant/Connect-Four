@@ -11,7 +11,6 @@ class App extends React.Component {
     this.state = {
       screen: "MENU", // MENU | GAME
       playerOneColor: null,
-      result: null,
     }
   }
 
@@ -26,7 +25,6 @@ class App extends React.Component {
     alert(result);
     this.setState({
       screen: "MENU",
-      result: result,
     });
   }
 

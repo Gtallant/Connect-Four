@@ -50,7 +50,6 @@ class Game extends React.Component {
   }
 
   endTurn() {
-    console.log('---- endTurn ----');
     this.setState(prevState => {
       if (prevState.currentPlayer === 0) {
         return {
@@ -70,8 +69,6 @@ class Game extends React.Component {
       currentPlayer,
       playerColors, 
     } = this.state;
-    console.log('... checkWin ...');
-    console.log(`Checking win condition at the ${row} space in column ${col}`);
     if (maxTurnsRemaining <= 0) {
       return 'Tie Game';
     } else {
@@ -112,7 +109,6 @@ class Game extends React.Component {
     const { gameData } = this.state;
     if ((col >= 0 && col <= 6) && (row >= 0 && row <= 5)) {
       if (gameData[col][row] === val) {
-        console.log(sum + 1);
         return sum + 1;
       }
       else {
@@ -123,7 +119,6 @@ class Game extends React.Component {
   }
 
   render() {
-    console.log('__________ RENDER __________');
     const {
       currentPlayer,
       playerColors,
