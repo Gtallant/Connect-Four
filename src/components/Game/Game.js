@@ -27,12 +27,10 @@ class Game extends React.Component {
         [null, null, null, null, null, null],
         [null, null, null, null, null, null]
       ],
-      result: null,
     }
   }
 
   placeToken(col, row, value) {
-    console.log(`---- placeToken (${col},${row}) ----`);
     this.setState(prevState => {
       let updatedGameData = prevState.gameData;
       updatedGameData[col][row] = value;
@@ -41,9 +39,13 @@ class Game extends React.Component {
         maxTurnsRemaining: prevState.maxTurnsRemaining - 1,
       };
     }, () => {
+      const { end } = this.props;
       const result = this.checkWin(col, row);
-      console.log(`Game Result: ${result}`);
-      this.setState(() => result, () => { this.endTurn()});
+      if (result) {
+        end(result);
+      } else {
+        this.endTurn();
+      }
     });
   }
 

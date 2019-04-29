@@ -7,9 +7,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.startGame = this.startGame.bind(this);
+    this.endGame = this.endGame.bind(this);
     this.state = {
-      screen: "START", // START | GAME | END
+      screen: "MENU", // MENU | GAME
       playerOneColor: null,
+      result: null,
     }
   }
 
@@ -20,12 +22,20 @@ class App extends React.Component {
     });
   }
 
+  endGame(result) {
+    alert(result);
+    this.setState({
+      screen: "MENU",
+      result: result,
+    });
+  }
+
   render() {
     const { screen, playerOneColor } = this.state;
     return (
       <div className="App">
-        {screen === "START" ? <StartScreen start={this.startGame} /> : ''}
-        {screen === "GAME" ? <Game playerOneColor={playerOneColor} /> : ''}
+        {screen === "MENU" ? <StartScreen start={this.startGame} /> : ''}
+        {screen === "GAME" ? <Game playerOneColor={playerOneColor} end={this.endGame} /> : ''}
       </div>
     );
   }
