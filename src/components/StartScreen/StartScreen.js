@@ -1,6 +1,5 @@
 import React from 'react';
 import './StartScreen.scss';
-import Space from '../Space';
 
 class Board extends React.Component {
   render() {

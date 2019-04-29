@@ -17,7 +17,6 @@ class Column extends React.Component {
       currentPlayer,
       playerColors,
       placeToken,
-      endTurn,
     } = this.props;
     const { tokenCount } = this.state;
     if (tokenCount < 6 ) {
@@ -25,7 +24,6 @@ class Column extends React.Component {
       this.setState(prevState => ({
         tokenCount: prevState.tokenCount + 1,
       }));
-      endTurn();
     }
   }
 

@@ -8,7 +8,6 @@ function Board(props) {
     playerColors,
     gameData,
     placeToken,
-    endTurn,
   } = props;
   return (
     <div className="board">
@@ -20,7 +19,6 @@ function Board(props) {
           playerColors={playerColors} 
           columnData={col}
           placeToken={placeToken}
-          endTurn={endTurn}
         />
       ))}
     </div>
